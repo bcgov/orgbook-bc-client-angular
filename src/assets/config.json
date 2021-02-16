@@ -1,6 +1,6 @@
 {
     "APPLICATION_URL": "https://dev.orgbook.gov.bc.ca",
-    "API_URL": "",
+    "API_URL": "https://dev.orgbook.gov.bc.ca/api",
     "BASE_HREF": "",
     "DISPLAY_TIMEZONE": "",
     "THEME": "bcgov",
