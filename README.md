@@ -1,26 +1,12 @@
-# TheOrgBook Web
+# Orgbook BC Client
 
 ## Overview
 
-The Web implements the user interface for TheOrgBook, calling the API to manage data. The interface is served from an instance of [NGINX](https://www.nginx.com/).
+This application implements a user interface (built with Angular) specifically for Orgbook BC, an extension of Aries VCR, for registered organizations within the Province of British Columbia.
 
-## Development
+## Running 
 
-Developing with data requires an instance of the Agent Issuer Controller or a connection to the test instance of BCovrign.
-
-### Themes
-
-Themes can be customized as per the [guide](ThemeDevelopment.md).
-
-### Docker
-
-A docker instance that runs hot-reloading can be initialized by following the steps located in the [developer guide](../../../docs/README.MD).
-
-### Ng Serve
-
-It is possible (but not recommended) to run the Web UI only in the development mode. To do this run the following command in the *vcr-web* directory.
-
-When running for the first time, install the required node.js packages:
+Running the web application in development mode can be done simply with the Angular CLI installed. Just run:
 
 ``` 
 npm install
@@ -32,3 +18,10 @@ and
 ng serve
 ```
 
+## Development
+
+With the application running, you can develop against any running Aries VCR instance by configuring the `API_URL` setting in `./src/assets/config.json`. The configuration will default to `https://dev.orgbook.gov.bc.ca/api`, however you can change this setting at anytime, even while the application is running.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
