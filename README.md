@@ -28,17 +28,16 @@ With the application running, you can develop against any running Aries VCR inst
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-
 ## Contributing
 
-  **Pull requests are always welcome!**
+**Pull requests are always welcome!**
 
-  Please see the [Contributions Guide](CONTRIBUTING.md) for the repo.
+Please see the [Contributions Guide](CONTRIBUTING.md) for the repo.
 
-  You may also create an issue if you would like to suggest additional resources to include in this repository.
+You may also create an issue if you would like to suggest additional resources to include in this repository.
 
-  All contrbutions to this repository should adhere to our [Code of Conduct](./CODE_OF_CONDUCT).
+All contrbutions to this repository should adhere to our [Code of Conduct](./CODE_OF_CONDUCT).
 
-  ## License
+## License
 
-  [Apache License Version 2.0](./LICENSE)
+[Apache License Version 2.0](./LICENSE)
