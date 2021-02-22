@@ -13,6 +13,40 @@ fi
 
 SCRIPT_HOME="$(cd "$(dirname "$0")" && pwd)"
 
+# ==================================================================================================
+# Usage:
+# --------------------------------------------------------------------------------------------------
+usage() {
+  cat <<-EOF
+
+      Usage: $0 [command] [options]
+
+      Commands:
+
+      build -   Build the docker images for the project. You need to do this first, since the builds
+                require a combination of Docker and S2I builds.
+
+      up -      Creates application containers from the built images and starts services based on
+                the docker-compose.yml file.
+
+      start -   Same as up.
+
+      restart - Re-starts application containers, useful when updating the container image during
+                development.
+
+      logs -    Display logs from the docker compose run (ctrl-c to exit).
+
+      stop -    Stops services. This is a non-destructive process. Any created volumes and
+                containers are not deleted so they will be reused the next time you run start.
+
+      down -    Brings down services and removes any created volumes (storage) and containers.
+
+      rm -      Same as down.
+
+EOF
+  exit 1
+}
+
 # -----------------------------------------------------------------------------------------------------------------
 # Default Settings:
 # -----------------------------------------------------------------------------------------------------------------
@@ -95,13 +129,13 @@ configureEnvironment() {
 
   export COMPOSE_PROJECT_NAME="${COMPOSE_PROJECT_NAME:-vcr}"
   export STI_SCRIPTS_PATH=${STI_SCRIPTS_PATH:-/usr/libexec/s2i}
-  export WEB_HTTP_PORT=${WEB_HTTP_PORT:-8080}		
-  export WEB_BASE_HREF=${WEB_BASE_HREF:-/}		
-  export WEB_DEPLOY_URL=${WEB_DEPLOY_URL:-/}		
-  export API_URL=${API_URL-http://vcr-api:8080/api/}		
-  export IpFilterRules='#allow all; deny all;'		
-  export RealIpFrom='127.0.0.0/16'		
-  export HTTP_BASIC_USERNAME=${HTTP_BASIC_USERNAME:-}		
+  export WEB_HTTP_PORT=${WEB_HTTP_PORT:-8080}
+  export WEB_BASE_HREF=${WEB_BASE_HREF:-/}
+  export WEB_DEPLOY_URL=${WEB_DEPLOY_URL:-/}
+  export API_URL=${API_URL-http://vcr-api:8080/api/}
+  export IpFilterRules='#allow all; deny all;'
+  export RealIpFrom='127.0.0.0/16'
+  export HTTP_BASIC_USERNAME=${HTTP_BASIC_USERNAME:-}
   export HTTP_BASIC_PASSWORD=${HTTP_BASIC_PASSWORD:-}
 }
 
@@ -177,7 +211,7 @@ case "${COMMAND}" in
     ;;
   stop)
     configureEnvironment
-    docker-compose stop 
+    docker-compose stop
     ;;
   rm|down)
     configureEnvironment
@@ -198,7 +232,10 @@ case "${COMMAND}" in
     if functionExists "build-${buildImage}"; then
       eval "build-${buildImage}"
     else
-      echoError "\nThe build function, build-${buildImage}, does not exist.  Please check your build parameters and try again.\nUse '-h' to get full help details."
+      msg="The build function, build-${buildImage}, does not exist. "
+      msg+="Please check your build parameters and try again.\n"
+      msg+="Use '-h' to get full help details."
+      echoError "$msg"
       exit 1
     fi
     ;;
