@@ -22,7 +22,7 @@ ng serve
 
 ## Development
 
-With the application running, you can develop against any running Aries VCR instance by configuring the `API_URL` setting in `./src/assets/config.json`. The configuration will default to `https://dev.orgbook.gov.bc.ca/api`, however you can change this setting at anytime, even while the application is running.
+With the application running, you can develop against any running Aries VCR instance by configuring the `API_URL` setting in `./src/assets/config.json`. The configuration will point to a locally running instance by default, however you can change this setting at anytime, even while the application is running.
 
 ## Further help
 
