@@ -6,23 +6,31 @@
 
 This application implements a user interface (built with Angular) specifically for Orgbook BC, an extension of Aries VCR, for registered organizations within the Province of British Columbia.
 
+_Note: The following sections on [Running](#running) and [Development](#development) assume that you already have a locally running instance of Aries-VCR. Please see the instructions [here](https://github.com/bcgov/aries-vcr/tree/master/docs) for running Aries-VCR locally with docker._
+
 ## Running 
 
-Running the web application in development mode can be done simply with the Angular CLI installed. Just run:
+Running the web application is easiest with docker. Navigate to the `docker/` folder run the following in a terminal:
 
 ``` 
-npm install
+./manage build
 ``` 
 
-and
+followed by
 
 ``` 
-ng serve
+./manage start
 ```
 
 ## Development
 
-With the application running, you can develop against any running Aries VCR instance by configuring the `API_URL` setting in `./src/assets/config.json`. The configuration will point to a locally running instance by default, however you can change this setting at anytime, even while the application is running.
+Development is best done locally and requires the Angular CLI to be installed (see the installation instructions [here](https://angular.io/cli#installing-angular-cli)). With the CLI installed, navigate to the root directory of the repository and run the following in a terminal:
+
+```
+npm install && npm start
+```
+
+The application will be built and served with the Angular Dev Server, which watches for code changes and hot-reloads the application.
 
 ## Further help
 
