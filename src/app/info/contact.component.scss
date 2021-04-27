@@ -1,3 +1,11 @@
 
 //place all overrides for a specific theme in this file inside your theme/info directory
 @import "src/app/shared/styles/custom/contact.component.custom";
+
+#adding-to-orgbook {
+	margin-bottom: 1.5rem;
+	
+	.adding-to-orgbook-content {
+		padding: 1rem 1.2rem;
+	}
+}
