@@ -57,7 +57,7 @@
           <label class="control-label mb-0">Contact Reason</label>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="reason" value="incorrect" id="reason_incorrect" required [(ngModel)]="feedback.reason">
-            <label class="form-check-label" for="reason_incorrect">Report incorrect information</label>
+            <label class="form-check-label" for="reason_incorrect">Report incorrect or missing information (see panel)</label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="reason" value="additional" id="reason_additional" required [(ngModel)]="feedback.reason">
@@ -105,17 +105,36 @@
     </div>
 
     <div class="col-lg-4 mt-4 mt-lg-0" id="links">
+      
+       <div class="card card-primary" id="adding-to-orgbook">
+	      <div class="card-header">
+		      <h2 class="h5 my-0" tabindex="-1" translate>general.adding-title</h2>
+	      </div>
+	      <div class="adding-to-orgbook-content">
+	      <p>
+		    All businesses officially registered in BC are automatically added into OrgBook BC, usually within an hour of the actual registration.
+	      </p>
 
+		  <p>
+			You can either <a rel="external" href="https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/permits-licences/businesses-incorporated-companies">register your business in BC</a>&nbsp;<span class="fa fa-external-link"></span> or follow the full <a rel="external" href="https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/starting-a-business">step-by-step guide to starting a BC business</a>&nbsp;<span class="fa fa-external-link"></span>.
+		  </p>
+		  
+		  <p>
+			If you have already registered your business in BC but cannot find it in OrgBook BC, please get in touch using the contact form on the left.
+		  </p>
+	      </div>
+        </div>
+        
       <div class="card card-primary">
         <div class="card-header">
           <h2 class="h5 my-0" tabindex="-1" translate>general.links-title</h2>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            <a href="https://vonx.io/" rel="external">Verifiable Organizations Network</a> <span class="small fa fa-external-link"></span>
+            <a href="https://vonx.io/" rel="external">Verifiable Organizations Network</a>&nbsp;<span class="small fa fa-external-link"></span>
           </li>
           <li class="list-group-item">
-            <a href="https://github.com/bcgov/aries-vcr" rel="external">Fork us on GitHub</a> <span class="small fa fa-external-link"></span>
+            <a href="https://github.com/bcgov/aries-vcr" rel="external">Fork us on GitHub</a>&nbsp;<span class="small fa fa-external-link"></span>
           </li>
         </ul>
       </div>
