@@ -102,6 +102,7 @@ export class CredFormComponent implements OnInit, OnDestroy, AfterViewInit {
       if ("success" in verify_proof_req && !verify_proof_req["success"]) {
         console.log(verify_proof_req["results"]);
         this._verifyLoading = false;
+        this._dataService.loadRecord(this._verify, this.id, {"extPath": "verify"});
         return;
       }
 
