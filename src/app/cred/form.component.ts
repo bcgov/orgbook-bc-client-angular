@@ -98,6 +98,14 @@ export class CredFormComponent implements OnInit, OnDestroy, AfterViewInit {
       let verify_req_url = "/api/v3/credential/" + this.id + "/verify";
       let verify_proof_req = await this._httpClient.get(verify_req_url).toPromise();
 
+      // check that the proof request call was successful
+      if ("success" in verify_proof_req && !verify_proof_req["success"]) {
+        console.log(verify_proof_req["results"]);
+        this._verifyLoading = false;
+        this._dataService.loadRecord(this._verify, this.id, {"extPath": "verify"});
+        return;
+      }
+
       let proof_exch_id;
       if ("presentation_exchange" in verify_proof_req) {
         let proof_exch = verify_proof_req["presentation_exchange" as keyof typeof verify_proof_req];
