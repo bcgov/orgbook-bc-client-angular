@@ -3,9 +3,9 @@
     <option *ngFor="let option of options" [value]="option.value">
       <ng-container *ngIf="translateSelector; then selector; else noSelector"></ng-container>
       <ng-template #selector let-translateSelector>
-        {{ (translateSelector + '.' + option.description) | translate }}
+        {{ translateEntry(option.description, translateSelector) }}
       </ng-template>
-      <ng-template #noSelector>{{ option.description | translate }}</ng-template>
+      <ng-template #noSelector>{{ translateEntry(option.description) }}</ng-template>
     </option>
   </ng-container>
 </select>

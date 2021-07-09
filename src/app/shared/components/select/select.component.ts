@@ -49,4 +49,10 @@ export class SelectComponent implements ControlValueAccessor {
     this.select.setValue(value);
     this.onTouch(value);
   }
+
+  translateEntry(value: string, prefix?: string): string {
+    const key = prefix ? `${prefix}.${value}` : value;
+    const translated = this.translate.instant(key);
+    return translated === key ? value : translated;
+  }
 }
