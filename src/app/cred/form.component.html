@@ -5,7 +5,9 @@
 
   <div class="row mt-4" *ngIf="result.data as record">
     <div class="col-sm-12" *ngIf="(verify$ | async) as verify">
-      <h1 class="page-title" id="contentStart" tabindex="-1">{{'name.' + record.credential_type.description | translate}}</h1>
+      <h1 class="page-title" id="contentStart" tabindex="-1">
+        {{ translateEntry(record.credential_type.description, "name")}}
+      </h1>
 
       <div class="row title-links mb-3">
         <div class="col">
@@ -83,7 +85,7 @@
               <div class="col-sm-12">
                 <label class="control-label" translate>cred.cred-type</label>
                 <div class="form-field">
-                  {{'name.' + record.credential_type.description | translate}}
+                  {{ translateEntry(record.credential_type.description, "name")}}
                 </div>
               </div>
             </div>

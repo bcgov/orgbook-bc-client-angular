@@ -1,6 +1,6 @@
 import { Component, Input, forwardRef } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { GeneralDataService } from 'app/general-data.service';
 
 export interface ISelectOption {
   value: string | boolean | number;
@@ -27,7 +27,7 @@ export class SelectComponent implements ControlValueAccessor {
 
   onTouch: (any) => void;
 
-  constructor(public translate: TranslateService) { }
+  constructor(private generalDataService: GeneralDataService) { }
 
   writeValue(value: any): void {
     value && this.select.setValue(value);
@@ -51,8 +51,6 @@ export class SelectComponent implements ControlValueAccessor {
   }
 
   translateEntry(value: string, prefix?: string): string {
-    const key = prefix ? `${prefix}.${value}` : value;
-    const translated = this.translate.instant(key);
-    return translated === key ? value : translated;
+    return this.generalDataService.translateEntry(value, prefix);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Model } from '../data-types';
 import { TopicStateService } from 'app/topic/services/topic-state.service';
+import { GeneralDataService } from 'app/general-data.service';
 
 @Component({
   selector: 'cred-list',
@@ -22,6 +23,11 @@ export class CredListComponent {
   get format(): string {
     return this._format;
   }
-  constructor(public stateSvc: TopicStateService){}
+
+  constructor(public stateSvc: TopicStateService, public generalDataService: GeneralDataService){}
+
+  translateEntry(value: string, prefix?: string): string {
+    return this.generalDataService.translateEntry(value, prefix);
+  }
 
 }

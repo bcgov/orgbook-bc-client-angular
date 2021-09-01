@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { GeneralDataService } from 'app/general-data.service';
 import { Model } from '../data-types';
 
 @Component({
@@ -8,7 +9,7 @@ import { Model } from '../data-types';
 export class TimelineCredComponent {
   protected _cred: Model.Credential;
 
-  constructor() { }
+  constructor(private generalDataService: GeneralDataService) { }
 
   get credential() {
     return this._cred;
@@ -28,6 +29,10 @@ export class TimelineCredComponent {
     return this._cred && this._cred.local_name && this._cred.local_name.text;
     //return this._cred && this._cred.topic && this._cred.topic.local_name.text;
     //return this._cred && this._cred.names.length && this._cred.names[0].text;
+  }
+
+  translateEntry(value: string, prefix?: string): string {
+    return this.generalDataService.translateEntry(value, prefix);
   }
 
 }

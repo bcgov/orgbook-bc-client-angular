@@ -260,7 +260,7 @@ export class GeneralDataService {
               };
             }
           } else if (optname === 'credential_type_id') {
-            optval.label = this._translate.instant(`name.${optval.label}`)
+            optval.label = this.translateEntry(optval.label, 'name');
           }
           if (optidx in options) {
             options[optidx].push(optval);
@@ -399,5 +399,11 @@ export class GeneralDataService {
         return of(val);
       }),
     );
+  }
+
+  translateEntry(value: string, prefix?: string): string {
+    const key = prefix ? `${prefix}.${value}` : value;
+    const translated = this._translate.instant(key);
+    return translated === key ? value : translated;
   }
 }

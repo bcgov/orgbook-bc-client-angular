@@ -190,4 +190,8 @@ export class CredFormComponent implements OnInit, OnDestroy, AfterViewInit {
     return this._timelineRows;
   }
 
+  translateEntry(value: string, prefix?: string): string {
+    return this._dataService.translateEntry(value, prefix);
+  }
+
 }

@@ -7,7 +7,7 @@
     <div class="cred-detail">
       <p class="cred-title">
         <a class="body-link cred-link" [routerLink]="cred.topic.extLink('cred', cred.id) | localize">
-          {{ 'name.' + cred.credential_type.description | translate }}
+          {{ translateEntry(cred.credential_type.description, "name")}}
         </a>
       </p>
       <p *ngIf="cred.related_topics?.length">
@@ -45,7 +45,7 @@
       <div class="col-sm-4">
         <div class="cred-title">
           <a class="body-link cred-link" [routerLink]="cred.topic.extLink('cred', cred.id) | localize">
-            {{ 'name.' + cred.credential_type.description | translate }}
+            {{ translateEntry(cred.credential_type.description, "name")}}
           </a>
         </div>
         <div class="cred-date" *ngIf="
