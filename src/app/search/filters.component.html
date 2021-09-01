@@ -6,7 +6,8 @@
         <label *ngFor="let opt of filter.options" class="list-group-item filter-item" [ngClass]="{'list-group-item-primary': opt.active, 'active': opt.focused}">
           <div class="form-check">
             <input type="checkbox" tabindex="0" [id]="opt.id" class="form-check-input" [value]="opt.value" [checked]="opt.active" (change)="setFilter($event, filter.name, opt.value)" (focus)="opt.focused=true" (blur)="opt.focused=false">
-            <span class="filter-label">{{opt.label || (opt.tlabel | translate)}}
+            <span class="filter-label">
+              {{ translateEntry(opt.tlabel || opt.label, "name") }}
               <span class="badge badge-primary badge-pill ml-1" *ngIf="opt.count">{{opt.count | shortNumber}}</span>
             </span>
           </div>

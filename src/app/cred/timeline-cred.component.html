@@ -1,4 +1,4 @@
-{{'name.' + credential.credential_type.description | translate}}
+{{ translateEntry(credential.credential_type.description, "name") }}
 <strong *ngIf="related_topic_name">
   <span class="fa fa-link"></span> {{related_topic_name}}
 </strong>

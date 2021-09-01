@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Fetch, Filter } from '../data-types';
+import { GeneralDataService } from 'app/general-data.service';
+import { Filter } from '../data-types';
 
 @Component({
   selector: 'search-filters',
@@ -19,6 +20,8 @@ export class SearchFiltersComponent {
     this._loading = val;
   }
 
+  constructor(private generalDataService: GeneralDataService) {}
+
   get filters$() {
     return this._filters.streamVisible;
   }
@@ -34,5 +37,9 @@ export class SearchFiltersComponent {
     upd[name] = value;
     upd['page'] = '1';
     this._filters.update(upd);
+  }
+
+  translateEntry(value: string, prefix?: string): string {
+    return this.generalDataService.translateEntry(value, prefix);
   }
 }
