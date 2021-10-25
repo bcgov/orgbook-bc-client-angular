@@ -301,7 +301,7 @@ export namespace Model {
     // visible_fields: string;
     has_logo: boolean;
 
-    static resourceName = "credentialtype";
+    static resourceName = "v4/credential-type?paging=false";
 
     static propertyMap = {
       issuer: "Issuer"
