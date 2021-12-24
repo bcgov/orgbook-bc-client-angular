@@ -1,6 +1,10 @@
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![img](https://img.shields.io/badge/Lifecycle-Experimental-339999)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Lifecycle:Retired](https://img.shields.io/badge/Lifecycle-Retired-d45500)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
 
 # Orgbook BC Client
+
+## Retirement Notice
+
+**_This verison of the OrgBook BC Client has been retired and replaced by [bcgov/orgbook-bc-client](https://github.com/bcgov/orgbook-bc-client)_**
 
 ## Overview
 
