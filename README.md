@@ -10,7 +10,7 @@
 
 This application implements a user interface (built with Angular) specifically for Orgbook BC, an extension of Aries VCR, for registered organizations within the Province of British Columbia.
 
-_Note: The following sections on [Running](#running) and [Development](#development) assume that you already have a locally running instance of Aries-VCR. Please see the instructions [here](https://github.com/bcgov/aries-vcr/tree/master/docs) for running Aries-VCR locally with docker._
+_Note: The following sections on [Running](#running) and [Development](#development) assume that you already have a locally running instance of Aries-VCR. Please see the instructions [here](https://github.com/bcgov/aries-vcr/tree/main/docs) for running Aries-VCR locally with docker._
 
 ## Running 
 
